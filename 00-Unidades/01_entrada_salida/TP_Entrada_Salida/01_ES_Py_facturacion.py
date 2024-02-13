@@ -89,9 +89,10 @@ class App(customtkinter.CTk):
         producto2 = int(producto2_str)
         producto3 = int(producto3_str)
 
-        sumatoria_total = producto1 + producto2 + producto3
-        sumatoria_total_mas_iva = sumatoria_total * 0.21
-        alert("Resultado",f"En total serian: ${sumatoria_total_mas_iva} pesos")
+        suma_productos = producto1 + producto2 + producto3
+        iva = suma_productos * 0.21
+        sumatoria_total_iva = suma_productos + iva
+        alert("Resultado",f"En total serian: ${sumatoria_total_iva} pesos")
 
     
 if __name__ == "__main__":

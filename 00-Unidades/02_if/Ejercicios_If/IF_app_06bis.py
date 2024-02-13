@@ -39,7 +39,17 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+        altura = int(self.txt_altura.get())
+        mensaje = ""
+        if altura >= 160 and altura <= 179:
+            mensaje = "Eres Escolta"
+        elif altura >= 180 and altura <= 199:
+            mensaje = "Eres Alero"
+        elif altura >= 200:
+            mensaje = "Eres Pivot"
+        else:
+            mensaje = "Fuera de rango :c"
+        alert("Resultado", mensaje)
 
         
         

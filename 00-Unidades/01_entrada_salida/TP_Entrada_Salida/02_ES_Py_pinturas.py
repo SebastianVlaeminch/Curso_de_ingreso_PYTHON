@@ -41,7 +41,7 @@ class App(customtkinter.CTk):
         
         self.txt_temperatura_f = customtkinter.CTkEntry(master=self)
         self.txt_temperatura_f.grid(row=1, column=1)
-       
+
         self.btn_convertir_c_f = customtkinter.CTkButton(master=self, text="Convertir °C a °F", command=self.btn_convertir_c_f_on_click)
         self.btn_convertir_c_f.grid(row=3, pady=10, columnspan=2, sticky="nsew")
         
@@ -49,10 +49,16 @@ class App(customtkinter.CTk):
         self.btn_convertir_f_c.grid(row=4, pady=10, columnspan=2, sticky="nsew")
     
     def btn_convertir_c_f_on_click(self):
-        pass
+        temperatura_centigrado_str = self.txt_temperatura_c.get()
+        temperatura_centigrado = float(temperatura_centigrado_str)
+        conversion_c_a_f = (temperatura_centigrado * 9/5) + 32
+        alert("Resultado",f"{conversion_c_a_f} °F")
 
     def btn_convertir_f_c_on_click(self):
-        pass
+        temperatura_fahrenheit_str = self.txt_temperatura_f.get()
+        temperatura_fahrenheit = float(temperatura_fahrenheit_str)
+        conversion_f_a_c = (temperatura_fahrenheit - 32) * 5/9
+        alert("Resultado",f"{conversion_f_a_c} °C")
     
     
 if __name__ == "__main__":
